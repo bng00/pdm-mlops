@@ -35,14 +35,11 @@ jobs:
       # TODO 7b: run the tests.  HINT: the same command you used in Part 4, without the "!"
       - name: Run tests
         run: python -m pytest -q
-      #test
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
 
       # TODO 7c: build the Docker image and tag it "machine-failure-api".
       # THINK: why build the image only AFTER the tests pass?
       - name: Build Docker image
-        run: docker build -t machine-failure-api
+        run: docker build -t machine-failure-api .
 
       - name: Smoke test the running container
         run: |
